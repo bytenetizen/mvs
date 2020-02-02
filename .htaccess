@@ -1,0 +1,15 @@
+#AddHandler application/x-httpd-php56 .php
+#php_value date.timezone Europe/Kiev
+
+RewriteEngine On
+
+# directory index file
+DirectoryIndex index.php
+# Options -Indexes
+Options -Indexes
+# Options +SymLinksIfOwnerMatch
+
+# send to index.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
